@@ -13,28 +13,28 @@ void sleep_seconds(double seconds) {
 struct NoFilmes{
     int id;
     string nome, dataLancamento, genero, nomeDiretor;
+    bool emprestado = false;
     NoFilmes* prox;
 };
 
-void exibir(NoFilmes* l){
-    NoFilmes* atual = l;
+NoFilmes* inicio = nullptr;
+
+
+void exibir(){
+    NoFilmes* atual = inicio;
     while (atual != nullptr) {
-            cout << atual->id << " | " << atual->nome << " | " << atual->dataLancamento << " | " << atual->genero << " | " << atual->nomeDiretor << endl;
+            cout << atual->id << ". " << atual->nome << " - " << atual->dataLancamento << " - " << atual->genero << " - " << atual->nomeDiretor << endl;
             atual = atual->prox;
         }
 }
 
-NoFilmes* inicio = nullptr;
-
-NoFilmes* carregarFilmesTXT(const string& nomeArquivo){
+void carregarFilmesTXT(const string& nomeArquivo){
     ifstream arquivo(nomeArquivo);
     if(!arquivo.is_open()){
         cout << "Erro ao abrir o arquivo!" << endl;
-        return nullptr;
+        return;
     }
 
-    NoFilmes* cabeca = nullptr;
-    NoFilmes* cauda  = nullptr;
     string linha;
 
     while(getline(arquivo, linha)){
@@ -56,15 +56,17 @@ NoFilmes* carregarFilmesTXT(const string& nomeArquivo){
         novo->dataLancamento = resto.substr(pos2 + 3, pos3 - pos2 - 3);
         novo->genero = resto.substr(pos3 + 3);
 
-        if (!cabeca) { 
-            cabeca = cauda = novo; 
-        }else{ 
-            cauda->prox = novo; 
-            cauda = novo;
+        if (inicio == nullptr){
+            inicio = novo;
+            continue;
         }
-    }
-    return cabeca;
+        NoFilmes* aux = inicio;
 
+        while(aux->prox != nullptr){
+            aux = aux->prox;
+        }
+        aux->prox = novo;
+    }
 }
 
 class FormaPagamento{
@@ -89,7 +91,7 @@ class Cliente : public FormaPagamento{
 
 int main(){ 
     system("chcp 65001");
-    NoFilmes* lista = carregarFilmesTXT("filmes.txt");
+    carregarFilmesTXT("filmes.txt");
     int escolha;
 
     do{
@@ -110,12 +112,15 @@ int main(){
             break;
         case 4:{
             while(escolha != 2){
+                cout << "\033[0m";
                 system("cls");
                 cout << "----------------------- FILMES -----------------------\n";
-                exibir(lista);
+                exibir();
+                cout << "\033[32m"; 
                 cout << "Deseja prosseguir 2 Sim, 1 Não:";
                 cin >> escolha;
             }
+            cout << "\033[0m";
             break;
         }
         case 5:
@@ -126,18 +131,20 @@ int main(){
             break;
         case 0:
             system("cls");
+            cout << "\033[31m"; 
             cout << "Saindo";
+
             sleep_seconds(0.1);
             system("cls");
             cout << "Saindo.";
+
             sleep_seconds(0.1);
             system("cls");
             cout << "Saindo..";
+
             sleep_seconds(0.1);
             system("cls");
             cout << "Saindo...";
-            sleep_seconds(0.1);
-
             break;
         
         default:
