@@ -1,0 +1,100 @@
+1. Diário de uma Paixão - Nick Cassavetes - 2004 - Romance
+2. Simplesmente Amor - Richard Curtis - 2003 - Romance
+3. Orgulho e Preconceito - Joe Wright - 2005 - Romance
+4. Titanic - James Cameron - 1997 - Romance
+5. La La Land - Damien Chazelle - 2016 - Romance
+6. Antes do Amanhecer - Richard Linklater - 1995 - Romance
+7. Amor Impossível - Wong Kar-wai - 2000 - Romance
+8. Casamento Grego - Joel Zwick - 2002 - Romance
+9. Notting Hill - Roger Michell - 1999 - Romance
+10. Correspondência - Nora Ephron - 1998 - Romance
+11. Brokeback Mountain - Ang Lee - 2005 - Romance
+12. Call Me by Your Name - Luca Guadagnino - 2017 - Romance
+13. O Destino de Uma Vida - Marc Webb - 2012 - Romance
+14. Querido John - Lasse Hallström - 2010 - Romance
+15. Mamma Mia! - Phyllida Lloyd - 2008 - Romance
+16. O Segredo dos Seus Olhos - Juan José Campanella - 2009 - Romance
+17. Moulin Rouge! - Baz Luhrmann - 2001 - Romance
+18. Amor e Outras Drogas - Edward Zwick - 2010 - Romance
+19. Pride & Prejudice & Zombies - Burr Steers - 2016 - Romance
+20. Meu Nome é Rádio - Mike Tollin - 2003 - Romance
+21. O Iluminado - Stanley Kubrick - 1980 - Terror
+22. Hereditário - Ari Aster - 2018 - Terror
+23. Corra! - Jordan Peele - 2017 - Terror
+24. O Exorcista - William Friedkin - 1973 - Terror
+25. Midsommar - Ari Aster - 2019 - Terror
+26. Paranormal Activity - Oren Peli - 2007 - Terror
+27. A Bruxa - Robert Eggers - 2015 - Terror
+28. O Farol - Robert Eggers - 2019 - Terror
+29. Invocação do Mal - James Wan - 2013 - Terror
+30. Pânico - Wes Craven - 1996 - Terror
+31. Sexta-Feira 13 - Sean S. Cunningham - 1980 - Terror
+32. A Profecia - Richard Donner - 1976 - Terror
+33. Halloween - John Carpenter - 1978 - Terror
+34. O Silêncio dos Inocentes - Jonathan Demme - 1991 - Terror
+35. Suspiria - Dario Argento - 1977 - Terror
+36. Us - Jordan Peele - 2019 - Terror
+37. Correntes do Mal - James Wan - 2010 - Terror
+38. Doctor Sleep - Mike Flanagan - 2019 - Terror
+39. Annihilation - Alex Garland - 2018 - Terror
+40. A Maldição - Gore Verbinski - 2002 - Terror
+41. Superbad - Greg Mottola - 2007 - Comédia
+42. O Diabo Veste Prada - David Frankel - 2006 - Comédia
+43. Ace Ventura - Tom Shadyac - 1994 - Comédia
+44. Esqueceram de Mim - Chris Columbus - 1990 - Comédia
+45. Missão Madrinha de Casamento - Paul Feig - 2011 - Comédia
+46. A Grande Viagem - Todd Phillips - 2009 - Comédia
+47. Debi & Lóide - Peter Farrelly - 1994 - Comédia
+48. A Vida de Brian - Terry Jones - 1979 - Comédia
+49. Monty Python e o Cálice Sagrado - Terry Gilliam - 1975 - Comédia
+50. Ted - Seth MacFarlane - 2012 - Comédia
+51. Os Caça-Fantasmas - Ivan Reitman - 1984 - Comédia
+52. Quero Matar Meu Chefe - Seth Gordon - 2011 - Comédia
+53. Barbie - Greta Gerwig - 2023 - Comédia
+54. O Auto da Compadecida - Guel Arraes - 2000 - Comédia
+55. Clube da Luta - David Fincher - 1999 - Comédia
+56. Jogada de Mestre - Jay Roach - 2000 - Comédia
+57. Enganando a Si Mesmo - Judd Apatow - 2007 - Comédia
+58. Pixel - Chris Columbus - 2015 - Comédia
+59. Muita Calma Nessa Hora - Maurício Farias - 2010 - Comédia
+60. Se Beber, Não Case! - Todd Phillips - 2009 - Comédia
+61. Toy Story - John Lasseter - 1995 - Animação
+62. O Rei Leão - Roger Allers - 1994 - Animação
+63. Spirited Away - Hayao Miyazaki - 2001 - Animação
+64. Up — Altas Aventuras - Pete Docter - 2009 - Animação
+65. WALL-E - Andrew Stanton - 2008 - Animação
+66. Meu Vizinho Totoro - Hayao Miyazaki - 1988 - Animação
+67. Princesa Mononoke - Hayao Miyazaki - 1997 - Animação
+68. Shrek - Andrew Adamson - 2001 - Animação
+69. Procurando Nemo - Andrew Stanton - 2003 - Animação
+70. Frozen - Chris Buck - 2013 - Animação
+71. Ratatouille - Brad Bird - 2007 - Animação
+72. Os Incríveis - Brad Bird - 2004 - Animação
+73. Coco - Lee Unkrich - 2017 - Animação
+74. Soul - Pete Docter - 2020 - Animação
+75. Encanto - Byron Howard - 2021 - Animação
+76. Cinderela - Clyde Geronimi - 1950 - Animação
+77. Moana - Ron Clements - 2016 - Animação
+78. Mulan - Barry Cook - 1998 - Animação
+79. Kubo e as Cordas Mágicas - Travis Knight - 2016 - Animação
+80. A Noiva Cadáver - Tim Burton - 2005 - Animação
+81. Psicose - Alfred Hitchcock - 1960 - Suspense
+82. Sete - David Fincher - 1995 - Suspense
+83. Os Suspeitos - Bryan Singer - 1995 - Suspense
+84. Memento - Christopher Nolan - 2000 - Suspense
+85. A Origem - Christopher Nolan - 2010 - Suspense
+86. Shutter Island - Martin Scorsese - 2010 - Suspense
+87. Gone Girl - David Fincher - 2014 - Suspense
+88. Zodíaco - David Fincher - 2007 - Suspense
+89. Oldboy - Park Chan-wook - 2003 - Suspense
+90. A Garota no Trem - Tate Taylor - 2016 - Suspense
+91. Os Outros - Alejandro Amenábar - 2001 - Suspense
+92. A Janela Indiscreta - Alfred Hitchcock - 1954 - Suspense
+93. Vértigo - Alfred Hitchcock - 1958 - Suspense
+94. Prisioneiros - Denis Villeneuve - 2013 - Suspense
+95. Enemy - Denis Villeneuve - 2013 - Suspense
+96. O Sexto Sentido - M. Night Shyamalan - 1999 - Suspense
+97. Sinais - M. Night Shyamalan - 2002 - Suspense
+98. Caçada Mortal - James Wan - 2004 - Suspense
+99. A Ilha do Medo - Brad Anderson - 2001 - Suspense
+100. Segredos do Passado - Jonathan Glazer - 2004 - Suspense
