@@ -40,6 +40,7 @@ class Clientes{
         int id;
         string nome, telefone, cpf;
         FormaPagamentos pagamento;
+        int formaPagamento;
     public:
         Clientes(){
             nome = "Não definido";
@@ -47,14 +48,30 @@ class Clientes{
             cpf = "Não definido";
         }
 
-        Clientes(string nome, string telefone, string cpf){
+        Clientes(int id, string nome, string telefone, string cpf){
             this->nome = nome;
             this->cpf = cpf;
             this->telefone = telefone;
         }
+
+        string getNome(){
+            return nome;
+        }
+
+        int getId(){
+            return id;
+        }
+
+        string getTelefone(){
+            return telefone;
+        }
+
+        string getCPF(){
+            return cpf;
+        }
 }; 
 
-void carregarClientesTXT(const string& nomeArquivo){
+void carregarClientesTXT(const string& nomeArquivo, vector<Clientes>& clientesCadastrados){
     ifstream arquivo(nomeArquivo);
     if(!arquivo.is_open()){
         cout << "Erro ao abrir o arquivo!" << endl;
@@ -62,11 +79,23 @@ void carregarClientesTXT(const string& nomeArquivo){
     }
 
     string linha;
-
     while(getline(arquivo, linha)){
         if (linha.empty()) continue;
 
+        int pontoPos = linha.find(". ");
+        int id = stoi(linha.substr(0, pontoPos));
 
+        string resto = linha.substr(pontoPos + 2);
+        int pos1 = resto.find(" - ");
+        int pos2 = resto.find(" - ", pos1 + 1);
+        int pos3 = resto.find(" - ", pos2 + 1);
+
+        string nome      = resto.substr(0, pos1);
+        string telefone  = resto.substr(pos1 + 3, pos2 - pos1 - 3);
+        string cpf       = resto.substr(pos2 + 3, pos3 - pos2 - 3);
+        int formaPag     = stoi(resto.substr(pos3 + 3));
+
+        clientesCadastrados.push_back(Clientes(id, nome, telefone, cpf));
     }
 }
 
@@ -243,7 +272,7 @@ NoFilmes* buscarFilme(string tituloFilme){ // to pensando em fazer com q vc poss
         return aux;
     }catch(const exception& e){
         cout << "Erro: " << e.what() << endl;
-        return;
+        return nullptr;
     }
 }
 
@@ -258,11 +287,13 @@ void devolverFilme(){
 int main(){ 
     system("chcp 65001");
     carregarFilmesTXT("filmes.txt");
+    vector<Clientes> clientesCadastrados;
+    carregarClientesTXT("clientes.txt", clientesCadastrados);
     int escolha;
     do{
         system("cls");
         cout << "----------------------- Menu de Emprestimo -----------------------\n";
-        cout << "1. Emprestar filme\n2. Devolver filme\n3. Cadastrar cliente\n4. Mostrar filmes\n5. Cadastrar filme\n6. Selecionar filtro\n0. Sair\nEscolha: ";
+        cout << "1. Emprestar filme\n2. Devolver filme\n3. Cadastrar cliente\n4. Mostrar filmes\n5. Cadastrar filme\n6. Selecionar filtro\n7. Mostrar Clientes cadastrados\n0. Sair\nEscolha: ";
         cin >> escolha;
         switch (escolha)
         {
@@ -327,6 +358,18 @@ int main(){
             cout << "CONCLUIDO!";
             this_thread::sleep_for(chrono::milliseconds(500));
             system("cls");
+            break;
+        case 7:
+            int choice;
+            do{
+                system("cls");
+                cout << "----------------------- NOSSOS CLIENTES -----------------------\n";
+                for(int i = 0; i < clientesCadastrados.size(); i++){
+                    cout << "Nome:" << clientesCadastrados[i].getNome() << " - ID: " << clientesCadastrados[i].getId() << " - Telefone: " << clientesCadastrados[i].getTelefone() << " - CPF: " << clientesCadastrados[i].getCPF() << endl; 
+                }
+                cout << "1. Sair\n-> ";
+                cin >> choice;
+            }while(choice != 1);
             break;
         case 0:
             system("cls");
