@@ -566,7 +566,7 @@ int main(){
             break;
         }
         case 4:{
-            while(escolha != 2){
+            while(escolha != 1){
                 cout << "\033[0m";
                 system("cls");
                 cout << "======================================\n";
