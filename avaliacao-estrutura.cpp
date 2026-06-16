@@ -396,6 +396,30 @@ Clientes buscarCliente(vector<Clientes>& clienteCadastrado, string nomeCliente){
     }
 }
 
+Clientes buscarClienteBinaria(vector<Clientes>& clienteCadastrado, string nomeCliente){
+    try{
+        int inicio = 0;
+        int fim = (int)clienteCadastrado.size() - 1;
+
+        while(inicio <= fim){
+            int meio = inicio + (fim - inicio) / 2; // evita overflow vs (inicio+fim)/2
+
+            if(clienteCadastrado[meio].getNome() == nomeCliente){
+                return clienteCadastrado[meio];
+            } else if(clienteCadastrado[meio].getNome() < nomeCliente){
+                inicio = meio + 1; // descarta a metade esquerda
+            } else {
+                fim = meio - 1; // descarta a metade direita
+            }
+        }
+
+        throw invalid_argument("Cliente não encontrado");
+    }catch(const exception& e){
+        cout << "Erro: " << e.what() << endl;
+        return Clientes(); // usa o construtor default
+    }
+}
+
 void emprestarFilme(string tituloFilme, Clientes cliente){
     NoFilmes* filmeEscolhido = buscarFilme(tituloFilme);
     if (filmeEscolhido == nullptr){
