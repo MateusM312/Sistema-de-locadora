@@ -207,50 +207,7 @@ string getCampo(NoFilmes* novo, int campo){
     }
 }
 
-void ordenarFilmesBubbleSort(int campo){
-    try{
-        if(inicio == nullptr || inicio->prox == nullptr){
-            throw runtime_error("Lista vazia ou com apenas um elemento, nada a ordenar.");
-        }
-        if(campo < 1 || campo > 5){
-            throw invalid_argument("Campo de ordenação inválido.");
-        }
-
-        bool trocou;
-        do{
-            trocou = false;
-            NoFilmes* anterior = nullptr;
-            NoFilmes* atual = inicio;
-
-            while(atual != nullptr && atual->prox != nullptr){
-                NoFilmes* proximo = atual->prox;
-
-                if(getCampo(atual, campo) > getCampo(proximo, campo)){
-                    atual->prox = proximo->prox;
-                    proximo->prox = atual;
-
-                    if(anterior == nullptr){
-                        inicio = proximo;
-                    } else {
-                        anterior->prox = proximo;
-                    }
-
-                    anterior = proximo;
-                    trocou = true;
-                } else {
-                    anterior = atual;
-                    atual = proximo;
-                }
-            }
-        } while(trocou);
-
-    }catch(const exception& e){
-        cout << "Erro: " << e.what() << endl;
-        return;
-    }
-}
-
-void ordenarFilmesInsertion(int campo){ 
+void ordenarFilmes(int campo){ 
     try{
         if(inicio == nullptr || inicio->prox == nullptr){
             throw runtime_error("Lista vazia ou com apenas um elemento, nada a ordenar.");
@@ -264,21 +221,23 @@ void ordenarFilmesInsertion(int campo){
         NoFilmes* atual = inicio;
 
         while(atual != nullptr){
-            NoFilmes* proximo = atual->prox;
+            NoFilmes* proximo = atual->prox; // guarda o próximos ANTES de mexer nos ponteiros
 
             if(ordenada == nullptr || getCampo(atual, campo) < getCampo(ordenada, campo)){
                 atual->prox = ordenada;
                 ordenada = atual;
             } else {
                 NoFilmes* busca = ordenada;
+                // avança pra encontrar a posição, sem religar nada ainda
                 while (busca->prox != nullptr && getCampo(busca->prox, campo) <= getCampo(atual, campo)){
                     busca = busca->prox;
                 }
+                // agora sim, insere na posiÃ§Ã£o encontrada
                 atual->prox = busca->prox;
                 busca->prox = atual;
             }
 
-            atual = proximo;
+            atual = proximo; // anda pro próximo da lista original, fora do else
         }
 
         inicio = ordenada;
@@ -601,7 +560,7 @@ int main(){
             cout << endl;
             cout << "-------------------------------------------------------\n";
             campo = lerInt("Escolha seu filtro: ");
-            ordenarFilmesInsertion(campo);
+            ordenarFilmes(campo);
             this_thread::sleep_for(chrono::milliseconds(500));
             cout << "CONCLUIDO!";
             this_thread::sleep_for(chrono::milliseconds(500));
